@@ -29,8 +29,8 @@ export const useStorage = (file)=> {
             const downloadUrl = await getDownloadURL(storageRef)
             setUrl(downloadUrl)
 
-            const createAt = serverTimestamp()
-            await addDoc(collectionRef, {url: downloadUrl, createAt})
+            const createdAt = serverTimestamp()
+            await addDoc(collectionRef, {url: downloadUrl, createdAt})
         })
 
         return () => unsub()
